@@ -16,6 +16,11 @@ public with sharing class Homework
          // purpose.  e.g. '*', multiply
  
          // Operators are : 
+         // On Line 9, '=' Assignment Operator, here a value of 3 is assigned to Score
+         // On Line 11, '>' Is Greater Than. Compares two values
+         // On Line 11, '&&', This is logical Operator 
+         // On Line 11, '==' is a Comparing Operator. Checks to see if LHS = RHS?
+         // On Line 12, '+5' Score is incrimented by 5.
     }
 
     public void increment()
@@ -27,8 +32,10 @@ public with sharing class Homework
         Integer millimetres = centimetres++ * 10;
 
         // change the nulls below to the values you expect
-        System.assertEquals(null, centimetres);
-        System.assertEquals(null, millimetres);
+        System.assertEquals(10, centimetres);
+        System.assertEquals(100, millimetres);
+        
+
     }
 
     public void compoundAssigment()
@@ -36,8 +43,8 @@ public with sharing class Homework
         Integer value = 40000;
 
         // Convert the following statements to compound assignments.
-        value = value + 70000;
-        value = value / 2;
+        value += 70000;
+        value /= 2;
     }
 
     public void toggleBoolean()
@@ -47,6 +54,7 @@ public with sharing class Homework
         // add a line to toggle the value of the boolean
         // i.e. if it is true it will change to false and if it is
         // false it will change to true.
+        done = !done;
 
     }
 
@@ -58,7 +66,7 @@ public with sharing class Homework
         Boolean matching = (opp1==opp2);
         
         // update the assert to reflect what you think the value of matching will be
-        System.assertEquals(null, matching);
+        System.assertEquals('Test Opp 2', matching);
     }
 
     public void incrementing()
@@ -68,9 +76,9 @@ public with sharing class Homework
         // Update the comments to change ? to the value that you 
         // think will be written to the debug log
 
-        System.debug('Prefix = ' + (++x));  // Prefix = ?
+        System.debug('Prefix = ' + (++x));  // Prefix = 4
 
-        System.debug('Postfix = ' + (x++)); // Postfix = ?
+        System.debug('Postfix = ' + (x++)); // Postfix = 4
 
 
     }
@@ -81,6 +89,8 @@ public with sharing class Homework
 
         // convert the farenheight parameter to celsius and assign to
         // the celsius variable in as few statements as possible and
+        celsius = (farenheight-32)*5/9;
+
     }
 
     public Integer equals(String first, String second)
@@ -90,7 +100,15 @@ public with sharing class Homework
         // set result to 0 if first and second are equal
         // set result to 1 if first is greater than second 
         // set result to -1 if first is less than second 
-
+        if (first==second) {
+            result = 0;
+        } 
+        if (first>second) {
+            result = 1;
+        }
+        if (first<second) {
+            result = -1;
+        }
         return result;
     } 
 
@@ -101,7 +119,7 @@ public with sharing class Homework
         // assign 'value' raised to the power of 'power' to result
         // e.g. if value is 10 and power is 2, result should be 100
         // do not use a loop!
-
+        result = value^power;
         return result;
     }
 
@@ -114,6 +132,7 @@ public with sharing class Homework
         // but if value is 11, upper is 15 and lower is 12, result is false
 
         // Do not use an if statement!
+        result = value<=upper && value>=lower?TRUE:FALSE;
 
         return result;
     }
@@ -134,6 +153,6 @@ public with sharing class Homework
         estateCar=familyCar;
 
         // update the assert below with the correct value for speed
-        System.assertEquals(null, estateCar.speed);
+        System.assertEquals(70, estateCar.speed);
     }
 }

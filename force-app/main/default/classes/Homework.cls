@@ -32,7 +32,7 @@ public with sharing class Homework
         Integer millimetres = centimetres++ * 10;
 
         // change the nulls below to the values you expect
-        System.assertEquals(10, centimetres);
+        System.assertEquals(11, centimetres);
         System.assertEquals(100, millimetres);
         
 
@@ -66,7 +66,7 @@ public with sharing class Homework
         Boolean matching = (opp1==opp2);
         
         // update the assert to reflect what you think the value of matching will be
-        System.assertEquals('Test Opp 2', matching);
+        System.assertEquals(FALSE, matching);
     }
 
     public void incrementing()
@@ -102,13 +102,12 @@ public with sharing class Homework
         // set result to -1 if first is less than second 
         if (first==second) {
             result = 0;
-        } 
-        if (first>second) {
+        } else if (first>second) {
             result = 1;
-        }
-        if (first<second) {
+        } else {
             result = -1;
         }
+        
         return result;
     } 
 
@@ -119,7 +118,7 @@ public with sharing class Homework
         // assign 'value' raised to the power of 'power' to result
         // e.g. if value is 10 and power is 2, result should be 100
         // do not use a loop!
-        result = value^power;
+        result = value.pow(power);
         return result;
     }
 
@@ -132,7 +131,7 @@ public with sharing class Homework
         // but if value is 11, upper is 15 and lower is 12, result is false
 
         // Do not use an if statement!
-        result = value<=upper && value>=lower?TRUE:FALSE;
+        result = value<=upper && value>=lower;
 
         return result;
     }
